@@ -1,0 +1,14 @@
+<html>
+<head>
+</head>
+<body>
+<script src="http://localhost:7575/socket.io/socket.io.js"></script>
+<script>
+  var socket = io('http://localhost:7575');
+  socket.on('document-1', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+</body>
+</html>
